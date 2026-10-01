@@ -1,0 +1,1686 @@
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --background: #050817;
+    --background-2: #090d22;
+    --background-3: #111735;
+
+    --white: #f8f5ef;
+    --muted: #b9bdcf;
+
+    --gold: #f1d19a;
+    --pink: #e8a7b7;
+    --purple: #8d72c8;
+
+    --glass: rgba(16, 23, 52, .65);
+
+    --border: rgba(255,255,255,.13);
+
+}
+
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+body {
+
+    background: var(--background);
+
+    color: var(--white);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+}
+
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background-particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124, 98, 210, .12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(232,167,183,.08),
+            transparent 30%
+        );
+
+}
+
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-weight: 500;
+
+}
+
+.script {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    color: var(--gold);
+
+}
+
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+#pageContainer {
+
+    position: relative;
+
+    width: 100vw;
+
+    height: 100vh;
+
+}
+
+
+
+/* EVERY PAGE */
+
+.page {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateX(100%);
+
+    transition:
+
+        opacity .7s ease,
+
+        transform .7s cubic-bezier(.77,0,.18,1),
+
+        visibility .7s;
+
+}
+
+
+
+/* ACTIVE PAGE */
+
+.page.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateX(0);
+
+}
+
+
+
+/* =========================================================
+   PAGE COUNTER
+========================================================= */
+
+.page-counter {
+
+    position: fixed;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: rgba(255,255,255,.55);
+
+}
+
+.counter-line {
+
+    width: 35px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+}
+
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-button {
+
+    position: fixed;
+
+    right: 25px;
+
+    top: 20px;
+
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: rgba(7,10,27,.65);
+
+    color: white;
+
+    backdrop-filter: blur(12px);
+
+    cursor: pointer;
+
+    z-index: 200;
+
+    transition: .3s;
+
+}
+
+.music-button:hover {
+
+    transform: scale(1.1);
+
+}
+
+.music-button.playing {
+
+    color: var(--gold);
+
+    box-shadow:
+        0 0 25px
+        rgba(241,209,154,.3);
+
+}
+
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.primary-button {
+
+    border: 1px solid
+        rgba(241,209,154,.6);
+
+    background:
+        rgba(241,209,154,.06);
+
+    color: white;
+
+    padding:
+        13px 26px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+}
+
+.primary-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(241,209,154,.15);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.3);
+
+}
+
+
+
+/* SECONDARY */
+
+.secondary-button {
+
+    margin-top: 35px;
+
+    padding:
+        10px 20px;
+
+    border-radius: 999px;
+
+    border: 1px solid var(--border);
+
+    background: transparent;
+
+    color: #aaaec0;
+
+    cursor: pointer;
+
+}
+
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--muted);
+
+    margin-bottom: 16px;
+
+}
+
+
+
+/* =========================================================
+   SECRET PAGE
+========================================================= */
+
+#page-secret {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #121936,
+            #050817 65%
+        );
+
+}
+
+.secret-content {
+
+    width: min(600px,100%);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+.lock-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+    animation:
+        floatingLock 3s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes floatingLock {
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+.secret-content h1 {
+
+    font-size:
+        clamp(3rem,7vw,5.5rem);
+
+    line-height: .95;
+
+    margin-bottom: 15px;
+
+}
+
+.secret-description {
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+}
+
+
+
+/* QUESTION */
+
+.question-box {
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    background:
+        rgba(15,21,48,.65);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(15px);
+
+}
+
+.question {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 25px;
+
+    margin-bottom: 22px;
+
+}
+
+
+
+/* INPUT */
+
+#nameInput {
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        rgba(0,0,0,.2);
+
+    color: white;
+
+    outline: none;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+
+    transition: .3s;
+
+}
+
+#nameInput:focus {
+
+    border-color:
+        var(--gold);
+
+    box-shadow:
+        0 0 25px
+        rgba(241,209,154,.08);
+
+}
+
+
+
+/* WRONG */
+
+.wrong-message {
+
+    display: none;
+
+    margin-top: 18px;
+
+    color: #f09aaa;
+
+    line-height: 1.5;
+
+    animation:
+        shake .4s ease;
+
+}
+
+@keyframes shake {
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+
+}
+
+
+
+/* =========================================================
+   SUCCESS PAGE
+========================================================= */
+
+#page-success {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #382557,
+            #090a20 65%
+        );
+
+}
+
+.success-content {
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+.success-heart {
+
+    font-size: 65px;
+
+    animation:
+        heartbeat 1s
+        infinite;
+
+}
+
+@keyframes heartbeat {
+
+    50% {
+
+        transform:
+            scale(1.18);
+
+    }
+
+}
+
+.success-content h1 {
+
+    font-size:
+        clamp(3.2rem,8vw,7rem);
+
+    line-height: .9;
+
+    margin:
+        15px 0 25px;
+
+}
+
+.success-content p {
+
+    color: var(--muted);
+
+    margin-bottom: 30px;
+
+}
+
+
+
+/* CONFETTI */
+
+.confetti {
+
+    position: absolute;
+
+    top: -30px;
+
+    font-size: 25px;
+
+    animation:
+        confettiFall
+        var(--duration)
+        linear
+        forwards;
+
+    pointer-events: none;
+
+}
+
+@keyframes confettiFall {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   OPENING PAGE
+========================================================= */
+
+#page-opening {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(67,78,167,.35),
+            transparent 50%
+        ),
+
+        #050817;
+
+}
+
+.stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.8) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        130px 130px;
+
+    opacity: .3;
+
+}
+
+.moon {
+
+    position: absolute;
+
+    right: 13%;
+
+    top: 14%;
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #fff4cc;
+
+    box-shadow:
+        0 0 60px
+        rgba(255,240,190,.25);
+
+}
+
+.moon::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -12px;
+
+    top: 8px;
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #050817;
+
+}
+
+.opening-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    width: min(700px,100%);
+
+}
+
+.opening-content h1 {
+
+    font-size:
+        clamp(4rem,10vw,8rem);
+
+    line-height: .85;
+
+    margin:
+        10px 0 30px;
+
+}
+
+.opening-content p {
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+/* =========================================================
+   BIRTHDAY
+========================================================= */
+
+#page-birthday {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #080b1d,
+            #121630
+        );
+
+}
+
+.birthday-content {
+
+    text-align: center;
+
+}
+
+.birthday-script {
+
+    font-size: 50px;
+
+}
+
+.birthday-content h1 {
+
+    font-size:
+        clamp(4rem,10vw,8rem);
+
+    line-height: .85;
+
+}
+
+.gold-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin:
+        25px auto;
+
+}
+
+.birthday-cake {
+
+    font-size: 75px;
+
+    margin:
+        25px 0;
+
+    animation:
+        cakeFloat 3s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes cakeFloat {
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+.birthday-content p {
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-page {
+
+    width: min(850px,100%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.paper {
+
+    width: min(650px,100%);
+
+    padding: 45px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f4e8d0,
+            #e5d0ac
+        );
+
+    color: #392d25;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.4);
+
+    transform:
+        rotate(-1deg);
+
+    position: relative;
+
+}
+
+.paper-decoration {
+
+    position: absolute;
+
+    right: 25px;
+
+    top: 18px;
+
+    color: #a96b7c;
+
+    font-size: 25px;
+
+}
+
+.paper-title {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    color: #71514a;
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+
+}
+
+.paper p {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.55;
+
+}
+
+.paper-signature {
+
+    margin-top: 25px;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 25px;
+
+    color: #79555a;
+
+}
+
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-page {
+
+    width: min(950px,100%);
+
+    text-align: center;
+
+}
+
+.section-heading {
+
+    margin-bottom: 30px;
+
+}
+
+.section-heading h1 {
+
+    font-size:
+        clamp(3rem,7vw,5rem);
+
+    line-height: .9;
+
+}
+
+.section-heading p {
+
+    color: var(--muted);
+
+    margin-top: 12px;
+
+}
+
+
+
+.polaroid-gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+.polaroid {
+
+    background: #eee6d8;
+
+    padding:
+        8px 8px 20px;
+
+    color: #292321;
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,0,0,.3);
+
+    transition: .3s;
+
+}
+
+.polaroid:hover {
+
+    transform:
+        translateY(-8px)
+        rotate(0);
+
+}
+
+.polaroid img {
+
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+.polaroid span {
+
+    display: block;
+
+    padding-top: 10px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 17px;
+
+}
+
+.photo-one {
+
+    transform:
+        rotate(-4deg);
+
+}
+
+.photo-two {
+
+    transform:
+        rotate(3deg);
+
+    margin-top: 20px;
+
+}
+
+.photo-three {
+
+    transform:
+        rotate(-2deg);
+
+}
+
+.photo-four {
+
+    transform:
+        rotate(4deg);
+
+    margin-top: 15px;
+
+}
+
+
+
+/* =========================================================
+   REASONS
+========================================================= */
+
+.reasons-page {
+
+    width: min(900px,100%);
+
+    text-align: center;
+
+}
+
+.reasons-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+.reason-card {
+
+    padding: 22px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(15,21,48,.6);
+
+    border-radius: 18px;
+
+    text-align: left;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+
+}
+
+.reason-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(241,209,154,.4);
+
+}
+
+.reason-icon {
+
+    color: var(--gold);
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
+
+}
+
+.reason-card h3 {
+
+    font-size: 24px;
+
+    margin-bottom: 6px;
+
+}
+
+.reason-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* =========================================================
+   GAME
+========================================================= */
+
+.game-page {
+
+    width: min(600px,100%);
+
+    text-align: center;
+
+}
+
+.game-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+
+}
+
+.game-page h1 {
+
+    font-size:
+        clamp(3rem,7vw,5rem);
+
+    line-height: .9;
+
+}
+
+.game-question {
+
+    color: var(--muted);
+
+    margin:
+        20px 0;
+
+}
+
+.game-options {
+
+    display: grid;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+.game-option {
+
+    padding: 14px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(15,21,48,.5);
+
+    border-radius: 12px;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.game-option:hover {
+
+    background:
+        rgba(241,209,154,.1);
+
+    border-color:
+        var(--gold);
+
+}
+
+.game-option.selected-correct {
+
+    background:
+        rgba(105,180,125,.15);
+
+    border-color:
+        #8de3a4;
+
+}
+
+.game-option.selected-wrong {
+
+    animation:
+        shake .4s ease;
+
+    border-color:
+        #e78b9a;
+
+}
+
+.game-result {
+
+    min-height: 30px;
+
+    color: var(--gold);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+}
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+/* =========================================================
+   TIME CAPSULE
+========================================================= */
+
+.capsule-page {
+
+    width: min(900px,100%);
+
+    display: grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+.capsule-visual {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+.envelope {
+
+    width: 260px;
+
+    height: 190px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 70px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #211d35,
+            #49304a
+        );
+
+    border:
+        1px solid
+        rgba(241,209,154,.3);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.4);
+
+    animation:
+        envelopeFloat 3s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes envelopeFloat {
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(1deg);
+
+    }
+
+}
+
+.capsule-content h1 {
+
+    font-size:
+        clamp(3rem,7vw,5.5rem);
+
+    line-height: .9;
+
+}
+
+.capsule-content p {
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    margin:
+        20px 0;
+
+}
+
+.capsule-letter {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-left:
+        2px solid
+        var(--gold);
+
+    background:
+        rgba(255,255,255,.03);
+
+    color: #ddd;
+
+    line-height: 1.7;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 19px;
+
+}
+
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-page {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(70,70,160,.4),
+            transparent 55%
+        );
+
+    text-align: center;
+
+}
+
+.final-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(750px,100%);
+
+}
+
+.final-content h1 {
+
+    font-size:
+        clamp(3.5rem,8vw,7rem);
+
+    line-height: .85;
+
+}
+
+.final-content h1 span {
+
+    color: var(--pink);
+
+}
+
+.final-content p {
+
+    color: #d1d3df;
+
+    line-height: 1.8;
+
+    margin:
+        25px auto;
+
+    max-width: 620px;
+
+}
+
+.final-love {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    color: var(--gold);
+
+    font-size: 50px;
+
+    margin-top: 25px;
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .polaroid-gallery {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .polaroid img {
+
+        height: 150px;
+
+    }
+
+    .capsule-page {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        text-align: center;
+
+    }
+
+    .envelope {
+
+        width: 190px;
+
+        height: 130px;
+
+        font-size: 50px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .page {
+
+        padding:
+            25px 17px;
+
+    }
+
+    .page-counter {
+
+        top: 17px;
+
+    }
+
+    .music-button {
+
+        right: 15px;
+
+        top: 14px;
+
+    }
+
+    .secret-content h1 {
+
+        font-size: 3.5rem;
+
+    }
+
+    .question-box {
+
+        padding: 22px 17px;
+
+    }
+
+    .question {
+
+        font-size: 22px;
+
+    }
+
+    .success-content h1 {
+
+        font-size: 4rem;
+
+    }
+
+    .opening-content h1 {
+
+        font-size: 4.5rem;
+
+    }
+
+    .paper {
+
+        padding: 30px 23px;
+
+    }
+
+    .paper p {
+
+        font-size: 17px;
+
+    }
+
+    .paper-title {
+
+        font-size: 31px;
+
+    }
+
+    .polaroid-gallery {
+
+        gap: 8px;
+
+    }
+
+    .polaroid {
+
+        padding:
+            6px 6px 13px;
+
+    }
+
+    .polaroid img {
+
+        height: 120px;
+
+    }
+
+    .polaroid span {
+
+        font-size: 13px;
+
+    }
+
+    .reasons-grid {
+
+        grid-template-columns: 1fr;
+
+        max-height: 52vh;
+
+        overflow-y: auto;
+
+    }
+
+    .reason-card {
+
+        padding: 16px;
+
+    }
+
+    .reason-card h3 {
+
+        font-size: 20px;
+
+    }
+
+    .reason-card p {
+
+        font-size: 12px;
+
+    }
+
+}

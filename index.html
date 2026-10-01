@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#050817">
+
+    <title>A Little Surprise For You ♡</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND (partikel dibuat otomatis oleh script.js) -->
+    <div class="background-particles" id="particles"></div>
+
+    <!-- MUSIC -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicButton" class="music-button" aria-label="Putar / jeda musik">
+        <span class="music-icon">♫</span>
+    </button>
+
+    <!-- PROGRESS -->
+    <div class="page-counter" id="pageCounter">
+        <span id="currentPage">01</span>
+        <span class="counter-line"></span>
+        <span>09</span>
+    </div>
+
+    <!-- PAGE CONTAINER -->
+    <main id="pageContainer">
+
+        <!-- PAGE 0 : SECRET QUESTION -->
+        <section class="page active" id="page-secret">
+            <div class="page-inner secret-content">
+
+                <div class="lock-icon">🔐</div>
+                <div class="eyebrow">HALLO DE ISNA SAYANG</div>
+
+                <h1>Sebelum masuk...</h1>
+
+                <p class="secret-description">
+                    Ada satu pertanyaan kecil yang harus kamu jawab terlebih dahulu.
+                </p>
+
+                <div class="question-box">
+                    <p class="question">Siapa nama lengkap calon suami kamu?</p>
+
+                    <input type="text" id="nameInput" placeholder="Ketik jawabanmu..." autocomplete="off">
+
+                    <button id="checkName" class="primary-button">Masuk ♡</button>
+
+                    <div id="wrongMessage" class="wrong-message">
+                        😭 Nama salah...
+                        <br>
+                        <small>Coba ingat-ingat lagi.</small>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 1 : SUCCESS -->
+        <section class="page" id="page-success">
+            <div id="celebrationContainer"></div>
+
+            <div class="page-inner success-content">
+                <div class="success-heart">💗</div>
+                <div class="script">Yaa kamu benar...</div>
+
+                <h1>Makasiiihhh<br>Sayang ♡</h1>
+
+                <p>
+                    Ternyata kamu masih ingat nama
+                    calon suami kamu sendiri. 😭
+                </p>
+
+                <button class="primary-button next-button" data-next="2">
+                    Lihat hadiahnya ✨
+                </button>
+            </div>
+        </section>
+
+
+        <!-- PAGE 2 : OPENING -->
+        <section class="page" id="page-opening">
+            <div class="stars"></div>
+            <div class="moon"></div>
+
+            <div class="page-inner opening-content">
+                <div class="eyebrow">A LITTLE SURPRISE FOR YOU</div>
+                <div class="script">Ada sesuatu...</div>
+                <h1>untuk kamu.</h1>
+
+                <p>
+                    Aku memang nggak bisa ada di samping kamu hari ini.
+                    <br>
+                    Tapi aku ingin tetap hadir dengan cara yang berbeda.
+                </p>
+
+                <button class="primary-button next-button" data-next="3">
+                    Buka hadiahmu ♡
+                </button>
+            </div>
+        </section>
+
+
+        <!-- PAGE 3 : BIRTHDAY -->
+        <section class="page" id="page-birthday">
+            <div class="page-inner birthday-content">
+
+                <div class="script birthday-script">Happy Birthday</div>
+
+                <!-- GANTI NAMA PACAR DI SINI -->
+                <h1>ISNA NUR AGUSTIN</h1>
+
+                <div class="gold-line"></div>
+
+                <div class="birthday-cake">🎂</div>
+
+                <p>
+                    Hari ini 20 November adalah hari spesial kamu.
+                    <br>
+                    Jadi hari ini harus dibuat sedikit lebih spesial.
+                </p>
+
+                <button class="primary-button next-button" data-next="4">
+                    Ada surat untukmu 💌
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 4 : LETTER -->
+        <section class="page" id="page-letter">
+            <div class="page-inner letter-page">
+
+                <div class="paper">
+                    <div class="paper-decoration">♡</div>
+                    <div class="paper-title">Untuk kamu...</div>
+
+                    <p>
+                        Sebenarnya aku ingin mengucapkannya
+                        langsung di depan kamu.
+
+                        <br><br>
+
+                        Melihat senyum kamu,
+                        memberikan sesuatu secara langsung,
+                        dan menghabiskan hari ini bersama kamu.
+
+                        <br><br>
+
+                        Tapi karena hari ini aku belum bisa datang,
+                        aku membuat sesuatu kecil ini khusus untuk kamu sayang.
+
+                        <br><br>
+
+                        Semoga saat kamu melihatnya,
+                        kamu bisa sedikit merasakan
+                        kehadiranku di sini.
+                    </p>
+
+                    <div class="paper-signature">
+                        — Dari aa untuk dede kesayangan aa ♡
+                    </div>
+                </div>
+
+                <button class="primary-button next-button" data-next="5">
+                    Lihat kenangan kita 📸
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 5 : GALLERY -->
+        <section class="page" id="page-gallery">
+            <div class="page-inner gallery-page">
+
+                <div class="section-heading">
+                    <div class="eyebrow">OUR LITTLE MEMORIES</div>
+                    <h1>Beberapa kenangan...</h1>
+                    <p>
+                        Mungkin sederhana,
+                        tapi semuanya punya tempat tersendiri.
+                    </p>
+                </div>
+
+                <div class="polaroid-gallery">
+
+                    <div class="polaroid photo-one">
+                        <img src="foto1.jpeg" alt="Kenangan pertama">
+                        <span>Momen pertama ♡</span>
+                    </div>
+
+                    <div class="polaroid photo-two">
+                        <img src="foto2.jpeg" alt="Kenangan kedua">
+                        <span>Hari yang indah</span>
+                    </div>
+
+                    <div class="polaroid photo-three">
+                        <img src="foto3.jpeg" alt="Kenangan ketiga">
+                        <span>Salah satu favoritku</span>
+                    </div>
+
+                    <div class="polaroid photo-four">
+                        <img src="foto4.jpg" alt="Kenangan keempat">
+                        <span>Kita ♡</span>
+                    </div>
+
+                </div>
+
+                <button class="primary-button next-button" data-next="6">
+                    Ada sesuatu lagi... ✨
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 6 : REASONS -->
+        <section class="page" id="page-reasons">
+            <div class="page-inner reasons-page">
+
+                <div class="section-heading">
+                    <div class="eyebrow">LITTLE THINGS I ADORE</div>
+                    <h1>Kenapa aku suka kamu?</h1>
+                </div>
+
+                <div class="reasons-grid">
+
+                    <div class="reason-card">
+                        <div class="reason-icon">♡</div>
+                        <h3>Senyummu</h3>
+                        <p>
+                            Karena senyum kamu punya cara sederhana
+                            untuk membuat semuanya terasa lebih baik.
+                        </p>
+                    </div>
+
+                    <div class="reason-card">
+                        <div class="reason-icon">✦</div>
+                        <h3>Cara kamu bercerita</h3>
+                        <p>Aku suka mendengarkan cerita-cerita kecil kamu.</p>
+                    </div>
+
+                    <div class="reason-card">
+                        <div class="reason-icon">☾</div>
+                        <h3>Perhatianmu</h3>
+                        <p>
+                            Hal-hal kecil yang kamu lakukan
+                            ternyata berarti banyak.
+                        </p>
+                    </div>
+
+                    <div class="reason-card">
+                        <div class="reason-icon">∞</div>
+                        <h3>Kamu</h3>
+                        <p>
+                            Karena pada akhirnya, alasan terbesarnya
+                            adalah kamu menjadi dirimu sendiri.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button class="primary-button next-button" data-next="7">
+                    Main sebentar 🎮
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 7 : MINI GAME -->
+        <section class="page" id="page-game">
+            <div class="page-inner game-page">
+
+                <div class="game-icon">🎮</div>
+                <div class="eyebrow">A LITTLE GAME</div>
+
+                <h1>Seberapa kenal<br>kamu denganku?</h1>
+
+                <p class="game-question">Apa yang paling aku suka dari kamu?</p>
+
+                <div class="game-options">
+                    <button class="game-option">Senyummu</button>
+                    <button class="game-option">Cara kamu cerita</button>
+                    <button class="game-option">Perhatianmu</button>
+                    <button class="game-option correct-answer">Semuanya ♡</button>
+                </div>
+
+                <div id="gameResult" class="game-result"></div>
+
+                <button id="gameNext" class="primary-button hidden">Lanjut ✨</button>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 8 : TIME CAPSULE -->
+        <section class="page" id="page-capsule">
+            <div class="page-inner capsule-page">
+
+                <div class="capsule-visual">
+                    <div class="envelope">💌</div>
+                </div>
+
+                <div class="capsule-content">
+
+                    <div class="eyebrow">TIME CAPSULE</div>
+
+                    <h1>Untuk kamu,<br>di masa depan...</h1>
+
+                    <p>Ada satu pesan yang ingin aku titipkan untuk kamu.</p>
+
+                    <button id="openCapsule" class="primary-button">Buka surat 💌</button>
+
+                    <div id="capsuleLetter" class="capsule-letter">
+                        Kalau suatu hari nanti kamu membuka
+                        kembali website ini...
+
+                        <br><br>
+
+                        Aku ingin kamu tahu bahwa aku selalu
+                        berharap kamu bahagia.
+
+                        <br><br>
+
+                        Semoga semua impianmu perlahan
+                        menemukan jalannya.
+
+                        <br><br>
+
+                        Dan semoga, ketika kamu membaca ini,
+                        kamu masih tersenyum seperti hari ini.
+
+                        <br><br>
+
+                        ♡
+                    </div>
+
+                    <!-- TOMBOL INI MUNCUL SETELAH SURAT DIBUKA (sebelumnya bikin macet) -->
+                    <button id="capsuleNext" class="primary-button hidden">
+                        Lanjut ke pesan terakhir ✨
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 9 : FINAL -->
+        <section class="page final-page" id="page-final">
+            <div class="stars"></div>
+
+            <div class="page-inner final-content">
+
+                <div class="script">One last thing...</div>
+
+                <h1>
+                    Selamat Ulang Tahun,
+                    <br>
+                    <!-- GANTI NAMA PACAR -->
+                    ISNA NUR AGUSTIN
+                    <span>♡</span>
+                </h1>
+
+                <div class="gold-line"></div>
+
+                <p>
+                    Walaupun hari ini aku nggak bisa datang,
+                    semoga kamu tetap merasa bahwa aku sedang
+                    merayakanmu dari jauh.
+
+                    <br><br>
+
+                    Terima kasih sudah menjadi kamu.
+
+                    <br><br>
+
+                    Semoga umur baru ini membawa banyak
+                    kebahagiaan, kesehatan, dan hal-hal baik
+                    yang selama ini kamu harapkan.
+
+                    <br><br>
+
+                    Dan semoga suatu hari nanti,
+                    aku bisa mengucapkan semua ini
+                    langsung di depan kamu.
+                </p>
+
+                <div class="final-love">I Love You ♡</div>
+
+                <button id="restartButton" class="secondary-button">
+                    Ulangi dari awal
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
