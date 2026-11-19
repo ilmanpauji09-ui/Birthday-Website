@@ -51,7 +51,7 @@ function updateCounter() {
     /*
         Halaman rahasia tidak dihitung.
         Jadi halaman birthday experience
-        tetap terlihat 01 - 10.
+        tetap terlihat 01 - 09.
     */
 
     let number;
@@ -131,7 +131,7 @@ function checkAnswer() {
     if (answer === correctName) {
 
         /*
-            BENAR
+            BENAR -> langsung putar musik
         */
 
         wrongMessage.style.display =
@@ -139,6 +139,8 @@ function checkAnswer() {
 
         nameInput.style.borderColor =
             "#8de3a4";
+
+        startMusic();
 
         createCelebration();
 
@@ -400,6 +402,13 @@ const capsuleLetter =
         "capsuleLetter"
     );
 
+const capsuleContent =
+    document.querySelector(
+        ".capsule-content"
+    );
+
+let capsuleNextButton = null;
+
 
 openCapsule.addEventListener(
     "click",
@@ -414,46 +423,40 @@ openCapsule.addEventListener(
         openCapsule.disabled =
             true;
 
-        /*
-            Setelah surat dibuka,
-            otomatis muncul tombol
-            setelah beberapa saat.
-        */
+        if (!capsuleNextButton) {
 
-        setTimeout(() => {
+            setTimeout(() => {
 
-            const nextButton =
-                document.createElement(
-                    "button"
+                capsuleNextButton =
+                    document.createElement(
+                        "button"
+                    );
+
+                capsuleNextButton.className =
+                    "primary-button";
+
+                capsuleNextButton.innerHTML =
+                    "Lanjut ke pesan terakhir ✨";
+
+                capsuleNextButton.style.marginTop =
+                    "20px";
+
+                capsuleNextButton.addEventListener(
+                    "click",
+                    () => {
+
+                        showPage(9);
+
+                    }
                 );
 
-            nextButton.className =
-                "primary-button";
-
-            nextButton.innerHTML =
-                "Lanjut ke pesan terakhir ✨";
-
-            nextButton.style.marginTop =
-                "20px";
-
-            nextButton.addEventListener(
-                "click",
-                () => {
-
-                    showPage(9);
-
-                }
-            );
-
-            document
-                .querySelector(
-                    ".capsule-content"
-                )
-                .appendChild(
-                    nextButton
+                capsuleContent.appendChild(
+                    capsuleNextButton
                 );
 
-        }, 1200);
+            }, 1200);
+
+        }
 
     }
 );
@@ -518,6 +521,10 @@ musicButton.addEventListener(
 
 function startMusic() {
 
+    if (!music) {
+        return;
+    }
+
     music.play()
         .then(() => {
 
@@ -567,6 +574,20 @@ restartButton.addEventListener(
 
         capsuleLetter.style.display =
             "none";
+
+        openCapsule.innerHTML =
+            "Buka surat 💌";
+
+        openCapsule.disabled =
+            false;
+
+        if (capsuleNextButton) {
+
+            capsuleNextButton.remove();
+
+            capsuleNextButton = null;
+
+        }
 
         gameResult.innerHTML =
             "";
